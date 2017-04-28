@@ -5,7 +5,7 @@ import { Header, Button } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
-  state = { loggedIn: false };
+  state = { loggedIn: null };
 
   componentWillMount() {
     firebase.initializeApp({
