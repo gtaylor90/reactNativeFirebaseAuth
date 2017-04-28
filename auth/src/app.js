@@ -43,7 +43,12 @@ class App extends Component {
         return <LoginForm />;
       default:
       // add some styling to put spinner in the middle of the page
-        return <Spinner size="large" />;
+        return (
+          <View style={styles.spinnerContStyle}>
+            <Spinner size="large" />
+          </View>
+
+        );
     }
   }
 
@@ -51,11 +56,19 @@ class App extends Component {
     return (
       <View>
         <Header headerText={'Auth'} />
-        {/* <LoginForm /> */}
         {this.renderContent()}
       </View>
     );
   }
 }
+
+const styles = {
+  spinnerContStyle: {
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    paddingBottom: 50
+  }
+};
 
 export default App;
