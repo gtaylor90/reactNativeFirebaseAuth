@@ -8,7 +8,7 @@ const Input = ({ label, value, onChangeText, placeholder, secureText }) => {
       <Text style={labelStyle}>{label}</Text>
       <TextInput
         secureTextEntry={secureText}
-        autoCapitalize={false}
+        autoCapitalize={'none'}
         placeholder={placeholder}
         autoCorrect={false}
         value={value}
