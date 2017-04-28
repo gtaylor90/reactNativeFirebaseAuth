@@ -32,6 +32,7 @@ class App extends Component {
   renderContent() {
     switch (this.state.loggedIn) {
       case true:
+        // button still doesn't display text, working on it
         return (
           <Button
             onPress={() => firebase.auth().signOut()}
