@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
-const Button = ({ onPress, children }) => {
+const Button = ({ onPress, label }) => {
   const { buttonStyle, textStyle } = styles;
   return (
     <TouchableOpacity
@@ -9,7 +9,7 @@ const Button = ({ onPress, children }) => {
       style={buttonStyle}
     >
       <Text style={textStyle}>
-        {children}
+        {label}
       </Text>
     </TouchableOpacity>
   );
@@ -25,7 +25,7 @@ const styles = {
     borderColor: '#007aff',
     marginLeft: 5,
     marginRight: 5,
-    paddingTop: 10,
+    paddingTop: 10
   },
   textStyle: {
     alignSelf: 'center',

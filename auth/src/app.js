@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { View } from 'react-native';
-import { Header, Button } from './components/common';
+import { Header, Button, Spinner } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
@@ -30,14 +30,20 @@ class App extends Component {
     return () => console.log('fuck');
   }
   renderContent() {
-    if (this.state.loggedIn) {
-      return (
-        <Button onPress={this.onButtonPress()}>
-          Log off
-        </Button>
+    switch (this.state.loggedIn) {
+      case true:
+        return (
+          <Button
+            onPress={() => firebase.auth().signOut()}
+            label={'log off'}
+          />
       );
+      case false:
+        return <LoginForm />;
+      default:
+      // add some styling to put spinner in the middle of the page
+        return <Spinner size="large" />;
     }
-      return <LoginForm />;
   }
 
   render() {
